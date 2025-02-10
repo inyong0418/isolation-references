@@ -7,4 +7,8 @@ spec:
   podSelector: {}
   policyType:
     - Ingress
-  ingress: []
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: mynginx
