@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: block-egress-to-8-8-8-8
+  namespace: admin
+spec:
+  podSelector: {}  # admin 네임스페이스의 모든 Pod에 적용
+  policyTypes:
+    - Egress
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 8.8.8.8/32  # 8.8.8.8 단일 IP 차단
