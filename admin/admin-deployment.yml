@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admin-nginx
-  labels:
-    app: admin-nginx
+  name: deployments-simple-deployment-privileged-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: server
+      app: deployments-simple-deployment-privileged-app
   template:
     metadata:
-      name: admin-nginx
       labels:
-        app: server
+        app: deployments-simple-deployment-privileged-app
     spec:
       containers:
-        - name: admin-nginx
+        - name: busybox
           image: busybox
-          ports:
-            - containerPort: 80
+          command:
+            - /bin/sh
+            - -c
+            #- export A=$(echo $POD_IP | tr '.' '-' | sed 's/$/.q-connector.pod.cluster.local/g') && echo ${A}
+            - sleep 3600
