@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-nginx
+  labels:
+    app: admin-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      name: admin-nginx
+      labels:
+        app: server
+    spec:
+      containers:
+        - name: admin-nginx
+          image: nginx:1.23.3
+          ports:
+            - containerPort: 80
