@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: admin-nginx
-          image: giantswarm/ping
+          image: alpine
           ports:
             - containerPort: 80
