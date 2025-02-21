@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: admin-nginx
-          image: bitnami/nginx:latest
+          image: pingidentity/pingtoolkit
           ports:
             - containerPort: 80
