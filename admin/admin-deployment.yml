@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: admin-nginx
-          image: pingidentity/pingtoolkit
+          image: giantswarm/ping
           ports:
             - containerPort: 80
