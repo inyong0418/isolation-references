@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: admin-nginx
-          image: nginx:1.23.3
+          image: bretfisher/httping
           ports:
             - containerPort: 80
