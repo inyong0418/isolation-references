@@ -19,3 +19,10 @@ spec:
       ports:
         - protocol: UDP
           port: 53  # DNS 요청 허용
+    # kube-apiserver 접근 허용
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0  # API 서버의 CIDR 또는 IP를 입력하세요
+      ports:
+        - protocol: TCP
+          port: 6443  # kube-apiserver와의 HTTPS 통신
