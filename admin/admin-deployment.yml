@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: admin-nginx
-          image: bretfisher/httping
+          image: bitnami/nginx:latest
           ports:
             - containerPort: 80
