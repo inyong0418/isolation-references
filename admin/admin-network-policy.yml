@@ -1,13 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: block-egress-to-8-8-8-8
+  name: block-all-egress-except-dns
   namespace: admin
 spec:
   podSelector: {}  # admin 네임스페이스의 모든 Pod에 적용
   policyTypes:
     - Egress
   egress:
+    # CoreDNS 서비스 허용 (UDP 53)
     - to:
-        - ipBlock:
-            cidr: 8.8.8.8/32  # 8.8.8.8 단일 IP 차단
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system  # CoreDNS가 있는 네임스페이스
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53  # DNS 요청 허용
