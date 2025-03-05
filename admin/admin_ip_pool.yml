@@ -7,7 +7,7 @@ spec:
     natOutgoing: false  # NAT을 비활성화하여 원래 IP 유지
     ipipMode: Never
     vxlanMode: Never
-    disabled: fals
+    disabled: false
 ~
 ~
 
