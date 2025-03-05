@@ -1,13 +1,13 @@
 apiVersion: projectcalico.org/v3
 kind: IPPool
 metadata:
-    name: admin-ip-pool
+  name: admin-ip-pool
 spec:
-    cidr: 10.30.1.0/24
-    natOutgoing: false  # NAT을 비활성화하여 원래 IP 유지
-    ipipMode: Never
-    vxlanMode: Never
-    disabled: false
+  cidr: 10.30.1.0/24
+  natOutgoing: false  # NAT을 비활성화하여 원래 IP 유지
+  ipipMode: Never
+  vxlanMode: Never
+  disabled: false
 ~
 ~
 
