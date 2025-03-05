@@ -1,9 +1,13 @@
-apiVersion: crd.projectcalico.org/v1
+apiVersion: projectcalico.org/v3
 kind: IPPool
 metadata:
-  name: admin-ip-pool
+    name: admin-ip-pool
 spec:
-  cidr: 10.30.1.0/24
-  ipipMode: Never   # IP-in-IP 비활성화
-  natOutgoing: false  # NAT 비활성화 (Pod의 실제 IP 유지)
-  nodeSelector: "all()"  # 모든 노드에서 사용 가능
+    cidr: 10.30.1.0/24
+    natOutgoing: false  # NAT을 비활성화하여 원래 IP 유지
+    ipipMode: Never
+    vxlanMode: Never
+    disabled: fals
+~
+~
+
