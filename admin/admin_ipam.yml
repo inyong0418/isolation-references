@@ -1,0 +1,10 @@
+apiVersion: projectcalico.org/v3
+kind: IPAMConfiguration
+metadata:
+  name: default
+spec:
+  autoAllocateBlocks: true
+  pools:
+    - cidr: 10.10.10.0/24
+      selector: "projectcalico.org/namespace == 'admin'"
+

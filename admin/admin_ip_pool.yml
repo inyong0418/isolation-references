@@ -1,7 +1,11 @@
 apiVersion: projectcalico.org/v3
 kind: IPPool
 metadata:
-  name: admin-ip-pool
+  name: admin-ippool
 spec:
-  cidr: 192.168.1.0/24
-  nodeSelector: all()
+  cidr: 10.10.10.0/24
+  natOutgoing: false
+  ipipMode: Never
+  vxlanMode: CrossSubnet
+  blockSize: 26
+  disabled: false
