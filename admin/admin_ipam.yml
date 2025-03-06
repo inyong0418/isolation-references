@@ -1,0 +1,9 @@
+apiVersion: projectcalico.org/v3
+kind: IPAMConfiguration
+metadata:
+  name: admin-ipam
+spec:
+  namespace: admin
+  autoAllocateBlocks: false
+  pools:
+    - 10.30.1.0/24
