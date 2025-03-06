@@ -3,8 +3,5 @@ kind: IPPool
 metadata:
   name: admin-ip-pool
 spec:
-  cidr: 10.30.1.0/24
-  natOutgoing: false  # NAT 비활성화
-  ipipMode: Never
-  vxlanMode: Never
+  cidr: 192.168.1.0/24
   nodeSelector: all()
